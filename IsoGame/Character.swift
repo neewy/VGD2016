@@ -7,7 +7,8 @@ protocol TileObject {
 }
 
 //2
-class Character {
+class Character: TileObject {
+    let tile: Tile
     
     var facing:Direction
     var action:Action
@@ -15,17 +16,19 @@ class Character {
     var tileSprite2D:SKSpriteNode!
     var tileSpriteIso:SKSpriteNode!
     
-    init() {
+    init(tile: Tile) {
         facing = Direction.e
         action = Action.idle
+        self.tile = tile
     }
     
 }
 
 //3
-class Droid:Character, TileObject {
-    
-    let tile = Tile.droid
+class Droid:Character {
+    init() {
+        super.init(tile: Tile.droid)
+    }
     
     func update() {
         

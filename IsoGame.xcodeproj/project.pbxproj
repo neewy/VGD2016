@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2C52813A1DA7DCD4000039FE /* Texture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5281391DA7DCD4000039FE /* Texture.swift */; };
 		2C52813C1DA7EA19000039FE /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C52813B1DA7EA19000039FE /* Character.swift */; };
+		2CBC1A641DBBAAB300FD9B6D /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC1A631DBBAAB300FD9B6D /* Map.swift */; };
+		2CBC1A661DBBAAC300FD9B6D /* CGPointOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC1A651DBBAAC300FD9B6D /* CGPointOperations.swift */; };
 		2CEC2C411DA51FCC00386482 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC2C401DA51FCC00386482 /* AppDelegate.swift */; };
 		2CEC2C451DA51FCC00386482 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC2C441DA51FCC00386482 /* GameScene.swift */; };
 		2CEC2C471DA51FCC00386482 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC2C461DA51FCC00386482 /* GameViewController.swift */; };
@@ -21,6 +23,8 @@
 /* Begin PBXFileReference section */
 		2C5281391DA7DCD4000039FE /* Texture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Texture.swift; sourceTree = "<group>"; };
 		2C52813B1DA7EA19000039FE /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		2CBC1A631DBBAAB300FD9B6D /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		2CBC1A651DBBAAC300FD9B6D /* CGPointOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointOperations.swift; sourceTree = "<group>"; };
 		2CEC2C3D1DA51FCC00386482 /* IsoGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IsoGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CEC2C401DA51FCC00386482 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CEC2C441DA51FCC00386482 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -29,7 +33,7 @@
 		2CEC2C4B1DA51FCC00386482 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CEC2C4E1DA51FCC00386482 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CEC2C501DA51FCC00386482 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2CEC2C561DA5202D00386482 /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = sprites.atlas; path = ../../../Downloads/sprites.atlas; sourceTree = "<group>"; };
+		2CEC2C561DA5202D00386482 /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				2CEC2C401DA51FCC00386482 /* AppDelegate.swift */,
 				2CEC2C441DA51FCC00386482 /* GameScene.swift */,
 				2C52813B1DA7EA19000039FE /* Character.swift */,
+				2CBC1A631DBBAAB300FD9B6D /* Map.swift */,
+				2CBC1A651DBBAAC300FD9B6D /* CGPointOperations.swift */,
 				2C5281391DA7DCD4000039FE /* Texture.swift */,
 				2CEC2C461DA51FCC00386482 /* GameViewController.swift */,
 				2CEC2C481DA51FCC00386482 /* Main.storyboard */,
@@ -152,7 +158,9 @@
 				2CEC2C451DA51FCC00386482 /* GameScene.swift in Sources */,
 				2C52813A1DA7DCD4000039FE /* Texture.swift in Sources */,
 				2C52813C1DA7EA19000039FE /* Character.swift in Sources */,
+				2CBC1A661DBBAAC300FD9B6D /* CGPointOperations.swift in Sources */,
 				2CEC2C471DA51FCC00386482 /* GameViewController.swift in Sources */,
+				2CBC1A641DBBAAB300FD9B6D /* Map.swift in Sources */,
 				2CEC2C411DA51FCC00386482 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
