@@ -26,12 +26,12 @@ class GameScene: SKScene {
         
         let deviceScale = self.size.width/667
         
-        map.view2D.position = CGPoint(x:-self.size.width*0.45, y:self.size.height*0.17)
-        map.view2D.xScale = deviceScale
-        map.view2D.yScale = deviceScale
+        map.view2D.position = CGPoint(x:-self.size.width*0.5, y:self.size.height*0.4)
+        map.view2D.xScale = deviceScale / 2
+        map.view2D.yScale = deviceScale / 2
         addChild(map.view2D)
         
-        map.viewIso.position = CGPoint(x:self.size.width*0.12, y:self.size.height*0.12)
+        map.viewIso.position = CGPoint(x:self.size.width*0.1, y:self.size.height*0.1)
         map.viewIso.xScale = deviceScale
         map.viewIso.yScale = deviceScale
         map.viewIso.addChild(map.layerIsoGround)
