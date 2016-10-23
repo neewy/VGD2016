@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		176EFF661DBCD51C003E4EF1 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176EFF651DBCD51C003E4EF1 /* GameObject.swift */; };
 		176EFF681DBCD557003E4EF1 /* MapArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176EFF671DBCD557003E4EF1 /* MapArray.swift */; };
 		176EFF6B1DBCD591003E4EF1 /* CGPointOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176EFF6A1DBCD591003E4EF1 /* CGPointOperations.swift */; };
 		17B75DD41DBCCB5A00B29008 /* TextureObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B75DD31DBCCB5900B29008 /* TextureObject.swift */; };
@@ -25,13 +24,13 @@
 		8AA2E6221DBCD7C1004F3B53 /* PathFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2E6211DBCD7C1004F3B53 /* PathFinder.swift */; };
 		8AA2E6281DBCDBE3004F3B53 /* CoordsConvertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2E6271DBCDBE3004F3B53 /* CoordsConvertion.swift */; };
 		8AA2E62A1DBCDF83004F3B53 /* Map2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2E6291DBCDF83004F3B53 /* Map2D.swift */; };
-		8AA2E6341DBCE93B004F3B53 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2E6331DBCE93B004F3B53 /* Enemy.swift */; };
 		8AA2E6361DBCFA19004F3B53 /* GlobalVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2E6351DBCFA19004F3B53 /* GlobalVars.swift */; };
-		8AA2E6381DBD304E004F3B53 /* MapObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2E6371DBD304E004F3B53 /* MapObject.swift */; };
+		8AA2E63B1DBD5AFF004F3B53 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2E6391DBD5AFF004F3B53 /* Enemy.swift */; };
+		8AA2E63C1DBD5AFF004F3B53 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2E63A1DBD5AFF004F3B53 /* GameObject.swift */; };
+		8AA2E63E1DBD5B0F004F3B53 /* MapObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2E63D1DBD5B0F004F3B53 /* MapObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		176EFF651DBCD51C003E4EF1 /* GameObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameObject.swift; path = Map/GameObject.swift; sourceTree = "<group>"; };
 		176EFF671DBCD557003E4EF1 /* MapArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapArray.swift; path = Map/MapArray.swift; sourceTree = "<group>"; };
 		176EFF6A1DBCD591003E4EF1 /* CGPointOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGPointOperations.swift; path = IsoGame/Utils/CGPointOperations.swift; sourceTree = "<group>"; };
 		17B75DD31DBCCB5900B29008 /* TextureObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextureObject.swift; path = Texture/TextureObject.swift; sourceTree = "<group>"; };
@@ -51,9 +50,10 @@
 		8AA2E6211DBCD7C1004F3B53 /* PathFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PathFinder.swift; path = Map/PathFinder.swift; sourceTree = "<group>"; };
 		8AA2E6271DBCDBE3004F3B53 /* CoordsConvertion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoordsConvertion.swift; path = IsoGame/Utils/CoordsConvertion.swift; sourceTree = "<group>"; };
 		8AA2E6291DBCDF83004F3B53 /* Map2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Map2D.swift; path = Map/Map2D.swift; sourceTree = "<group>"; };
-		8AA2E6331DBCE93B004F3B53 /* Enemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		8AA2E6351DBCFA19004F3B53 /* GlobalVars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalVars.swift; sourceTree = "<group>"; };
-		8AA2E6371DBD304E004F3B53 /* MapObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapObject.swift; sourceTree = "<group>"; };
+		8AA2E6391DBD5AFF004F3B53 /* Enemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Enemy.swift; path = GameObjects/Enemy.swift; sourceTree = "<group>"; };
+		8AA2E63A1DBD5AFF004F3B53 /* GameObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameObject.swift; path = GameObjects/GameObject.swift; sourceTree = "<group>"; };
+		8AA2E63D1DBD5B0F004F3B53 /* MapObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapObject.swift; path = Map/MapObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,19 +77,19 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		17BC2F721DBCC7A8003A061F /* Character */ = {
+		17BC2F721DBCC7A8003A061F /* GameObjects */ = {
 			isa = PBXGroup;
 			children = (
-				176EFF651DBCD51C003E4EF1 /* GameObject.swift */,
-				8AA2E6331DBCE93B004F3B53 /* Enemy.swift */,
+				8AA2E6391DBD5AFF004F3B53 /* Enemy.swift */,
+				8AA2E63A1DBD5AFF004F3B53 /* GameObject.swift */,
 			);
-			name = Character;
+			name = GameObjects;
 			sourceTree = "<group>";
 		};
 		17BC2F731DBCC7B3003A061F /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				8AA2E6371DBD304E004F3B53 /* MapObject.swift */,
+				8AA2E63D1DBD5B0F004F3B53 /* MapObject.swift */,
 				8AA2E6321DBCE87B004F3B53 /* ISO */,
 				8AA2E6311DBCE873004F3B53 /* 2D */,
 				17BC2F7A1DBCC856003A061F /* Enums */,
@@ -140,7 +140,7 @@
 				176EFF691DBCD56A003E4EF1 /* Utils */,
 				17BC2F831DBCC95D003A061F /* Texture */,
 				17BC2F731DBCC7B3003A061F /* Map */,
-				17BC2F721DBCC7A8003A061F /* Character */,
+				17BC2F721DBCC7A8003A061F /* GameObjects */,
 				2CEC2C561DA5202D00386482 /* sprites.atlas */,
 				2CEC2C401DA51FCC00386482 /* AppDelegate.swift */,
 				2CEC2C441DA51FCC00386482 /* GameScene.swift */,
@@ -246,19 +246,19 @@
 				2CEC2C451DA51FCC00386482 /* GameScene.swift in Sources */,
 				17BC2F801DBCC8E0003A061F /* Action.swift in Sources */,
 				17BC2F7C1DBCC86C003A061F /* Direction.swift in Sources */,
-				8AA2E6341DBCE93B004F3B53 /* Enemy.swift in Sources */,
 				2CEC2C471DA51FCC00386482 /* GameViewController.swift in Sources */,
 				8AA2E62A1DBCDF83004F3B53 /* Map2D.swift in Sources */,
 				176EFF681DBCD557003E4EF1 /* MapArray.swift in Sources */,
 				8AA2E6221DBCD7C1004F3B53 /* PathFinder.swift in Sources */,
-				176EFF661DBCD51C003E4EF1 /* GameObject.swift in Sources */,
 				8AA2E6361DBCFA19004F3B53 /* GlobalVars.swift in Sources */,
 				2CEC2C411DA51FCC00386482 /* AppDelegate.swift in Sources */,
 				176EFF6B1DBCD591003E4EF1 /* CGPointOperations.swift in Sources */,
 				17BC2F7E1DBCC8A2003A061F /* Tile.swift in Sources */,
+				8AA2E63B1DBD5AFF004F3B53 /* Enemy.swift in Sources */,
+				8AA2E63C1DBD5AFF004F3B53 /* GameObject.swift in Sources */,
 				17B75DD41DBCCB5A00B29008 /* TextureObject.swift in Sources */,
 				8AA2E6281DBCDBE3004F3B53 /* CoordsConvertion.swift in Sources */,
-				8AA2E6381DBD304E004F3B53 /* MapObject.swift in Sources */,
+				8AA2E63E1DBD5B0F004F3B53 /* MapObject.swift in Sources */,
 				63D8C8774592E8B8BF0CA4F6 /* MapISO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
