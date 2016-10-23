@@ -1,46 +1,13 @@
+//
+//  Map.swift
+//  IsoGame
+//
+//  Created by Nikolay Yushkevich on 23.10.16.
+//  Copyright © 2016 Dmitriy Kapitun. All rights reserved.
+//
+
 import SpriteKit
 
-enum Direction: Int {
-    
-    case n,ne,e,se,s,sw,w,nw
-    
-    var description:String {
-        switch self {
-        case .n:return "North"
-        case .ne:return "North East"
-        case .e:return "East"
-        case .se:return "South East"
-        case .s:return "South"
-        case .sw:return "South West"
-        case .w:return "West"
-        case .nw:return "North West"
-        }
-    }
-}
-
-enum Tile: Int {
-    
-    case ground, wall, droid
-    
-    var description:String {
-        switch self {
-        case .ground:return "Ground"
-        case .wall:return "Wall"
-        case .droid:return "Droid"
-        }
-    }
-}
-
-enum Action: Int {
-    case idle, move
-    
-    var description:String {
-        switch self {
-        case .idle:return "Idle"
-        case .move:return "Move"
-        }
-    }
-}
 
 class Map {
     //2
@@ -62,7 +29,7 @@ class Map {
         [(1,6), (0,0), (0,0), (0,0), (0,0), (0,0), (0,0), (0,0), (0,0), (1,2)],
         [(1,6), (0,0), (0,0), (0,0), (0,0), (0,0), (0,0), (0,0), (0,0), (1,2)],
         [(1,5), (1,4), (1,4), (1,4), (1,4), (1,4), (1,4), (1,4), (1,4), (1,3)]
-
+        
     ]
     
     

@@ -1,3 +1,11 @@
+//
+//  Texture.swift
+//  IsoGame
+//
+//  Created by Nikolay Yushkevich on 23.10.16.
+//  Copyright © 2016 Dmitriy Kapitun. All rights reserved.
+//
+
 import UIKit
 import SpriteKit
 
@@ -44,12 +52,6 @@ func textureImage(_ tile:Tile, direction:Direction, action:Action) -> String {
         }
     }
     
-}
-
-protocol TextureObject {
-    static var sharedInstance: TextureDroid {get}
-    var texturesIso:[[SKTexture]?] {get}
-    var textures2D:[[SKTexture]?] {get}
 }
 
 private let textureDroid = TextureDroid()
