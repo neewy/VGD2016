@@ -1,4 +1,3 @@
-//
 //  TileObject.swift
 //  IsoGame
 //
