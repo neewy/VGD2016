@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EnemyISO: Character {
+class EnemyISO: CharacterISO {
     init() {
         super.init(tile: Tile.droid)
     }

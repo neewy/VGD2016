@@ -13,11 +13,11 @@ class MapISO {
     let viewIso:SKSpriteNode
     let layerIsoGround:SKNode
     let layerIsoObjects:SKNode
-    let hero: Character
+    let hero: CharacterISO
     
     let tileSize = (width:32, height:32)
     
-    init(hero: Character) {
+    init(hero: CharacterISO) {
         viewIso = SKSpriteNode()
         layerIsoGround = SKNode()
         layerIsoObjects = SKNode()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Enemy2D: Character {
+class Enemy2D: Character2D {
     init() {
         super.init(tile: Tile.droid)
     }

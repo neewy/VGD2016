@@ -27,5 +27,24 @@ func pointIsoTo2D(_ p:CGPoint) -> CGPoint {
     point = point * CGPoint(x:1, y:-1)
     
     return point
+}
+
+
+func degreesToDirection(_ pdegrees:CGFloat) -> Direction {
+    var degrees = pdegrees
     
+    if (degrees < 0) {
+        degrees = degrees + 360
+    }
+    let directionRange = 45.0
+    
+    degrees = degrees + CGFloat(directionRange/2)
+    
+    var direction = Int(floor(Double(degrees)/directionRange))
+    
+    if (direction == 8) {
+        direction = 0
+    }
+    
+    return Direction(rawValue: direction)!
 }

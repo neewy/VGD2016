@@ -7,7 +7,10 @@ class GameScene: SKScene {
         fatalError("init(coder:) has not been implemented")
     }
     
-    let hero = Droid()
+    // Hero object in 2D and ISOMETRIC
+    let hero2D = Droid2D()
+    let heroISO = DroidISO()
+
     
     // Zombie object in 2D and ISOMETRIC
     let enemy2D = Enemy2D()
@@ -23,8 +26,8 @@ class GameScene: SKScene {
     //4
     override init(size: CGSize) {
         
-        map2D = Map2D(hero: hero)
-        mapISO = MapISO(hero: hero)
+        map2D = Map2D(hero: hero2D)
+        mapISO = MapISO(hero: heroISO)
 
         super.init(size: size)
         self.anchorPoint = CGPoint(x:0.5, y:0.5)
@@ -52,26 +55,6 @@ class GameScene: SKScene {
     }
     
     
-    func degreesToDirection(_ pdegrees:CGFloat) -> Direction {
-        var degrees = pdegrees
-        
-        if (degrees < 0) {
-            degrees = degrees + 360
-        }
-        let directionRange = 45.0
-        
-        degrees = degrees + CGFloat(directionRange/2)
-        
-        var direction = Int(floor(Double(degrees)/directionRange))
-        
-        if (direction == 8) {
-            direction = 0
-        }
-        
-        return Direction(rawValue: direction)!
-    }
-    
-    
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         //1
         let touch = touches.first
@@ -85,25 +68,29 @@ class GameScene: SKScene {
         //5
         
         //1
-        let deltaY = heroPos2D.y - hero.tileSprite2D.position.y
-        let deltaX = heroPos2D.x - hero.tileSprite2D.position.x
+        let deltaY = heroPos2D.y - hero2D.tileSprite2D.position.y
+        let deltaX = heroPos2D.x - hero2D.tileSprite2D.position.x
         //2
         let degrees = atan2(deltaX, deltaY) * (180.0 / CGFloat(M_PI))
         //3
-        hero.facing = degreesToDirection(degrees)
+        hero2D.facing = degreesToDirection(degrees)
+        hero2D.facing = degreesToDirection(degrees)
+        heroISO.facing = degreesToDirection(degrees)
+        heroISO.facing = degreesToDirection(degrees)
         //4
-        hero.update()
+        hero2D.update()
+        heroISO.update()
         
         let velocity = 100
-        let time = TimeInterval(distance(heroPos2D, p2: hero.tileSprite2D.position)/CGFloat(velocity))
-        hero.tileSprite2D.removeAllActions()
-        hero.tileSprite2D.run(SKAction.move(to: heroPos2D, duration: time))
+        let time = TimeInterval(distance(heroPos2D, p2: hero2D.tileSprite2D.position)/CGFloat(velocity))
+        hero2D.tileSprite2D.removeAllActions()
+        hero2D.tileSprite2D.run(SKAction.move(to: heroPos2D, duration: time))
         
     }
     
     override func update(_ currentTime: TimeInterval) {
         
-        hero.tileSpriteIso.position = point2DToIso(hero.tileSprite2D.position)
+        heroISO.tileSpriteIso.position = point2DToIso(hero2D.tileSprite2D.position)
         
         nthFrameCount += 1
         if (nthFrameCount == nthFrame) {

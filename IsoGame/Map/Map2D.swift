@@ -12,11 +12,11 @@ import SpriteKit
 class Map2D {
     //2
     let view2D:SKSpriteNode
-    let hero: Character
+    let hero: Character2D
     
     let tileSize = (width:32, height:32)
     
-    init(hero: Character) {
+    init(hero: Character2D) {
         view2D = SKSpriteNode()
         self.hero = hero
     }
