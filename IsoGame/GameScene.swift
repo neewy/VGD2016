@@ -8,13 +8,9 @@ class GameScene: SKScene {
     }
     
     // Hero object in 2D and ISOMETRIC
-    let hero2D = Droid2D()
-    let heroISO = DroidISO()
-
-    // Zombie object in 2D and ISOMETRIC
-    let enemy2D = Enemy2D()
-    let enemyISO = EnemyISO()
+    let enemy = Enemy()
     
+    // Карта
     let map2D: Map2D
     let mapISO: MapISO
     
@@ -23,8 +19,8 @@ class GameScene: SKScene {
     
     //4
     override init(size: CGSize) {
-        map2D = Map2D(hero: hero2D)
-        mapISO = MapISO(hero: heroISO)
+        map2D = Map2D(enemy: enemy)
+        mapISO = MapISO(enemy: enemy)
 
         super.init(size: size)
         self.anchorPoint = CGPoint(x:0.5, y:0.5)
@@ -33,64 +29,53 @@ class GameScene: SKScene {
     //5
     override func didMove(to view: SKView) {
         
-        let deviceScale = self.size.width/667
+        let deviceScale = self.size.width/1000
         
-        map2D.view.position = CGPoint(x:-self.size.width*0.5, y:self.size.height*0.4)
-        map2D.view.xScale = deviceScale / 2
-        map2D.view.yScale = deviceScale / 2
+        map2D.view.position = CGPoint(x:-self.size.width*0.4, y:self.size.height*0.4)
+        map2D.view.xScale = deviceScale / 3
+        map2D.view.yScale = deviceScale / 3
+        map2D.view.zPosition = 100;
         addChild(map2D.view)
         
-        mapISO.view.position = CGPoint(x:self.size.width*0.05, y:self.size.height*0.05)
+        mapISO.view.position = CGPoint(x:0, y:self.size.height*0.2)
         mapISO.view.xScale = deviceScale
         mapISO.view.yScale = deviceScale
         mapISO.view.addChild(mapISO.layerIsoGround)
         mapISO.view.addChild(mapISO.layerIsoObjects)
+        mapISO.view.zPosition = 1;
         addChild(mapISO.view)
         
+        mapISO.placeAllTilesISO()
         map2D.placeAllTiles2D()
-        mapISO.placeAllTilesIso()
+
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        //1
+        // Понимаем где у нас коснулись в изометрии
         let touch = touches.first
-        let touchLocation = touch!.location(in: mapISO.view)
+        let touchPositionISO = touch!.location(in: mapISO.view)
         
-        //2
-        var touchPos2D = pointIsoTo2D(touchLocation)
         
-        //3
-        touchPos2D = touchPos2D + CGPoint(x: map2D.tileSize.width/2, y: -map2D.tileSize.height/2)
+        // Преобразуем изометрию в 2D
+        var touchPosition2D = pointIsoTo2D(touchPositionISO)
+
+        print(touchPosition2D)
         
-        //4
-        let heroPos2D = touchPos2D + CGPoint(x: -map2D.tileSize.width/2, y: -map2D.tileSize.height/2)
-        //5
+        var positions = [CGPoint]()
+        positions.append(CGPoint(x:34.34765625, y:-189.62109375))
+        positions.append(CGPoint(x:34.34765625, y:-189.62109375))
+        positions.append(CGPoint(x:222.265640258789, y:-225.195327758789))
         
-        //1
-        let deltaY = heroPos2D.y - hero2D.tileSprite2D.position.y
-        let deltaX = heroPos2D.x - hero2D.tileSprite2D.position.x
-        //2
-        let degrees = atan2(deltaX, deltaY) * (180.0 / CGFloat(M_PI))
-        //3
-        hero2D.facing = degreesToDirection(degrees)
-        hero2D.facing = degreesToDirection(degrees)
-        heroISO.facing = degreesToDirection(degrees)
-        heroISO.facing = degreesToDirection(degrees)
-        //4
-        hero2D.update()
-        heroISO.update()
+        enemy.goThroughPath(path: positions)
         
-        let velocity = 100
-        let time = TimeInterval(distance(heroPos2D, p2: hero2D.tileSprite2D.position)/CGFloat(velocity))
-        hero2D.tileSprite2D.removeAllActions()
-        hero2D.tileSprite2D.run(SKAction.move(to: heroPos2D, duration: time))
-        
+        // Перемещаем 2D узел
+        //enemy.goTo(position: touchPosition2D)
     }
     
     override func update(_ currentTime: TimeInterval) {
         
-        heroISO.tileSpriteIso.position = point2DToIso(hero2D.tileSprite2D.position)
+        enemy.tileSpriteISO.position = point2DToIso(enemy.tileSprite2D.position)
         
         nthFrameCount += 1
         if (nthFrameCount == nthFrame) {

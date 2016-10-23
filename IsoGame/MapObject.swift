@@ -1,5 +1,5 @@
 //
-//  Enemy.swift
+//  MapObject.swift
 //  IsoGame
 //
 //  Created by Alexey on 23.10.16.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class EnemyISO: CharacterISO {
-    init() {
-        super.init(tile: Tile.droid)
-    }
+// Пока не трогаем
+class MapObject: NSObject {
+
+    
     
 }

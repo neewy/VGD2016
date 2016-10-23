@@ -48,3 +48,70 @@ func degreesToDirection(_ pdegrees:CGFloat) -> Direction {
     
     return Direction(rawValue: direction)!
 }
+
+func point2DToPointTileIndex(point:CGPoint) -> CGPoint {
+    
+    return floor(point / CGPoint(x: TILE_SIZE.width, y: TILE_SIZE.height))
+    
+}
+
+func pointTileIndexToPoint2D(point:CGPoint) -> CGPoint {
+    
+    return point * CGPoint(x: TILE_SIZE.width, y: TILE_SIZE.height)
+    
+}
+
+
+func traversableTiles() -> [[Int]] {
+    
+    //1
+    var tTiles = [[Int]]()
+    
+    //2
+    func binarize(num:Int) ->Int {
+        if (num == 0) {
+            return Global.tilePath.nonTraversable
+        } else {
+            return Global.tilePath.traversable
+        }
+    }
+    
+    //3
+    for i in 0..<tiles.count {
+        let tt = tiles[i].map{i in binarize(num: i.0)}
+        tTiles.append(tt)
+    }
+    
+    return tTiles
+}
+
+func findPathFrom(from:CGPoint, to:CGPoint) -> [CGPoint]? {
+    
+    let traversable = traversableTiles()
+    
+    //1
+    if (Int(to.x) > 0)
+        && (Int(to.x) < traversable.count)
+        && (Int(-to.y) > 0)
+        && (Int(-to.y) < traversable.count)
+    {
+        
+        //2
+        if (traversable[Int(-to.y)][Int(to.x)] == Global.tilePath.traversable ) {
+            
+            //3
+            let pathFinder = PathFinder(xIni: Int(from.x), yIni: Int(from.y), xFin: Int(to.x), yFin: Int(to.y), lvlData: traversable)
+            let myPath = pathFinder.findPath()
+            return myPath
+            
+        } else {
+            
+            return nil
+        }
+        
+    } else {
+        
+        return nil
+    }
+    
+}

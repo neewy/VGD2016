@@ -13,23 +13,23 @@ class MapISO {
     let view:SKSpriteNode
     let layerIsoGround:SKNode
     let layerIsoObjects:SKNode
-    let hero: CharacterISO
+    let enemy: Enemy
     
-    let tileSize = (width:32, height:32)
+    let tileSize = TILE_SIZE
     
-    init(hero: CharacterISO) {
+    init(enemy: Enemy) {
         view = SKSpriteNode()
         layerIsoGround = SKNode()
         layerIsoObjects = SKNode()
-        self.hero = hero
+        self.enemy = enemy
     }
     
     func placeTileIso(_ tile:Tile, direction:Direction, position:CGPoint) {
         
         let tileSprite = SKSpriteNode(imageNamed: "iso_3d_"+textureImage(tile, direction: direction, action: Action.idle))
         
-        if (tile == hero.tile) {
-            hero.tileSpriteIso = tileSprite
+        if (tile == enemy.tile) {
+            enemy.tileSpriteISO = tileSprite
         }
         
         tileSprite.position = position
@@ -43,7 +43,7 @@ class MapISO {
         }
         
     }
-    func placeAllTilesIso() {
+    func placeAllTilesISO() {
         
         for i in 0..<tiles.count {
             
@@ -90,4 +90,5 @@ class MapISO {
             
         }
     }
+
 }

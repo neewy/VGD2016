@@ -12,22 +12,20 @@ import SpriteKit
 class Map2D {
     //2
     let view:SKSpriteNode
-    let hero: Character2D
-    
-    let tileSize = (width:32, height:32)
-    
-    init(hero: Character2D) {
+    let enemy: Enemy
+        
+    init(enemy: Enemy) {
         view = SKSpriteNode()
-        self.hero = hero
+        self.enemy = enemy
     }
     
     func placeTile2D(_ tile:Tile, direction:Direction, position:CGPoint) {
         
         let tileSprite = SKSpriteNode(imageNamed: textureImage(tile, direction: direction, action: Action.idle))
         
-        if (tile == hero.tile) {
-            hero.tileSprite2D = tileSprite
-            hero.tileSprite2D.zPosition = 1
+        if (tile == enemy.tile) {
+            enemy.tileSprite2D = tileSprite
+            enemy.tileSprite2D.zPosition = 1
         }
         
         tileSprite.position = position
@@ -49,7 +47,7 @@ class Map2D {
                 let tile = Tile(rawValue: row[j].0)!
                 let direction = Direction(rawValue: row[j].1)!
                 
-                let point = CGPoint(x: (j*tileSize.width), y: -(i*tileSize.height))
+                let point = CGPoint(x: (j*TILE_SIZE.width), y: -(i*TILE_SIZE.height))
                 
                 if (tile == Tile.droid) {
                     placeTile2D(Tile.ground, direction:direction, position:point)
