@@ -11,7 +11,6 @@ class GameScene: SKScene {
     let hero2D = Droid2D()
     let heroISO = DroidISO()
 
-    
     // Zombie object in 2D and ISOMETRIC
     let enemy2D = Enemy2D()
     let enemyISO = EnemyISO()
@@ -19,13 +18,11 @@ class GameScene: SKScene {
     let map2D: Map2D
     let mapISO: MapISO
     
-    
     let nthFrame = 6
     var nthFrameCount = 0
     
     //4
     override init(size: CGSize) {
-        
         map2D = Map2D(hero: hero2D)
         mapISO = MapISO(hero: heroISO)
 
@@ -38,31 +35,34 @@ class GameScene: SKScene {
         
         let deviceScale = self.size.width/667
         
-        map2D.view2D.position = CGPoint(x:-self.size.width*0.5, y:self.size.height*0.4)
-        map2D.view2D.xScale = deviceScale / 2
-        map2D.view2D.yScale = deviceScale / 2
-        addChild(map2D.view2D)
+        map2D.view.position = CGPoint(x:-self.size.width*0.5, y:self.size.height*0.4)
+        map2D.view.xScale = deviceScale / 2
+        map2D.view.yScale = deviceScale / 2
+        addChild(map2D.view)
         
-        mapISO.viewIso.position = CGPoint(x:self.size.width*0.1, y:self.size.height*0.1)
-        mapISO.viewIso.xScale = deviceScale
-        mapISO.viewIso.yScale = deviceScale
-        mapISO.viewIso.addChild(mapISO.layerIsoGround)
-        mapISO.viewIso.addChild(mapISO.layerIsoObjects)
-        addChild(mapISO.viewIso)
+        mapISO.view.position = CGPoint(x:self.size.width*0.05, y:self.size.height*0.05)
+        mapISO.view.xScale = deviceScale
+        mapISO.view.yScale = deviceScale
+        mapISO.view.addChild(mapISO.layerIsoGround)
+        mapISO.view.addChild(mapISO.layerIsoObjects)
+        addChild(mapISO.view)
         
         map2D.placeAllTiles2D()
         mapISO.placeAllTilesIso()
     }
     
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
         //1
         let touch = touches.first
-        let touchLocation = touch!.location(in: mapISO.viewIso)
+        let touchLocation = touch!.location(in: mapISO.view)
+        
         //2
         var touchPos2D = pointIsoTo2D(touchLocation)
+        
         //3
         touchPos2D = touchPos2D + CGPoint(x: map2D.tileSize.width/2, y: -map2D.tileSize.height/2)
+        
         //4
         let heroPos2D = touchPos2D + CGPoint(x: -map2D.tileSize.width/2, y: -map2D.tileSize.height/2)
         //5

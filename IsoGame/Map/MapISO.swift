@@ -10,7 +10,7 @@ import SpriteKit
 
 class MapISO {
     //2
-    let viewIso:SKSpriteNode
+    let view:SKSpriteNode
     let layerIsoGround:SKNode
     let layerIsoObjects:SKNode
     let hero: CharacterISO
@@ -18,7 +18,7 @@ class MapISO {
     let tileSize = (width:32, height:32)
     
     init(hero: CharacterISO) {
-        viewIso = SKSpriteNode()
+        view = SKSpriteNode()
         layerIsoGround = SKNode()
         layerIsoObjects = SKNode()
         self.hero = hero

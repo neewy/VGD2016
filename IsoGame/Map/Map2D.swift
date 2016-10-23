@@ -11,13 +11,13 @@ import SpriteKit
 
 class Map2D {
     //2
-    let view2D:SKSpriteNode
+    let view:SKSpriteNode
     let hero: Character2D
     
     let tileSize = (width:32, height:32)
     
     init(hero: Character2D) {
-        view2D = SKSpriteNode()
+        view = SKSpriteNode()
         self.hero = hero
     }
     
@@ -34,7 +34,7 @@ class Map2D {
         
         tileSprite.anchorPoint = CGPoint(x:0, y:0)
         
-        view2D.addChild(tileSprite)
+        view.addChild(tileSprite)
         
     }
     
