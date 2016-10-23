@@ -24,7 +24,12 @@
 		2CEC2C4C1DA51FCC00386482 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CEC2C4B1DA51FCC00386482 /* Assets.xcassets */; };
 		2CEC2C4F1DA51FCC00386482 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CEC2C4D1DA51FCC00386482 /* LaunchScreen.storyboard */; };
 		2CEC2C571DA5202D00386482 /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 2CEC2C561DA5202D00386482 /* sprites.atlas */; };
-		63D8C8774592E8B8BF0CA4F6 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8CA46D88EC4AE1DE4E1E3 /* Map.swift */; };
+		63D8C8774592E8B8BF0CA4F6 /* MapISO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8CA46D88EC4AE1DE4E1E3 /* MapISO.swift */; };
+		8AA2E6221DBCD7C1004F3B53 /* Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2E6211DBCD7C1004F3B53 /* Paths.swift */; };
+		8AA2E6241DBCD89A004F3B53 /* EnemyISO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2E6231DBCD89A004F3B53 /* EnemyISO.swift */; };
+		8AA2E6261DBCD9D3004F3B53 /* Enemy2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2E6251DBCD9D3004F3B53 /* Enemy2D.swift */; };
+		8AA2E6281DBCDBE3004F3B53 /* CoordsConvertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2E6271DBCDBE3004F3B53 /* CoordsConvertion.swift */; };
+		8AA2E62A1DBCDF83004F3B53 /* Map2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2E6291DBCDF83004F3B53 /* Map2D.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +52,12 @@
 		2CEC2C4E1DA51FCC00386482 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CEC2C501DA51FCC00386482 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CEC2C561DA5202D00386482 /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
-		63D8CA46D88EC4AE1DE4E1E3 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Map.swift; path = Map/Map.swift; sourceTree = "<group>"; };
+		63D8CA46D88EC4AE1DE4E1E3 /* MapISO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapISO.swift; path = Map/MapISO.swift; sourceTree = "<group>"; };
+		8AA2E6211DBCD7C1004F3B53 /* Paths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Paths.swift; path = Map/Paths.swift; sourceTree = "<group>"; };
+		8AA2E6231DBCD89A004F3B53 /* EnemyISO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnemyISO.swift; path = Character/EnemyISO.swift; sourceTree = "<group>"; };
+		8AA2E6251DBCD9D3004F3B53 /* Enemy2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Enemy2D.swift; path = Character/Enemy2D.swift; sourceTree = "<group>"; };
+		8AA2E6271DBCDBE3004F3B53 /* CoordsConvertion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoordsConvertion.swift; path = IsoGame/Utils/CoordsConvertion.swift; sourceTree = "<group>"; };
+		8AA2E6291DBCDF83004F3B53 /* Map2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Map2D.swift; path = Map/Map2D.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				176EFF6A1DBCD591003E4EF1 /* CGPointOperations.swift */,
+				8AA2E6271DBCDBE3004F3B53 /* CoordsConvertion.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -74,6 +85,8 @@
 			children = (
 				17BC2F741DBCC7E0003A061F /* Character.swift */,
 				17BC2F781DBCC82D003A061F /* Droid.swift */,
+				8AA2E6231DBCD89A004F3B53 /* EnemyISO.swift */,
+				8AA2E6251DBCD9D3004F3B53 /* Enemy2D.swift */,
 			);
 			name = Character;
 			sourceTree = "<group>";
@@ -82,9 +95,11 @@
 			isa = PBXGroup;
 			children = (
 				17BC2F7A1DBCC856003A061F /* Enums */,
-				63D8CA46D88EC4AE1DE4E1E3 /* Map.swift */,
+				63D8CA46D88EC4AE1DE4E1E3 /* MapISO.swift */,
+				8AA2E6291DBCDF83004F3B53 /* Map2D.swift */,
 				176EFF651DBCD51C003E4EF1 /* TileObject.swift */,
 				176EFF671DBCD557003E4EF1 /* MapArray.swift */,
+				8AA2E6211DBCD7C1004F3B53 /* Paths.swift */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -175,7 +190,7 @@
 				TargetAttributes = {
 					2CEC2C3C1DA51FCC00386482 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = Q4T242PPZJ;
+						DevelopmentTeam = 52GNMSFB79;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -221,8 +236,12 @@
 				17BC2F801DBCC8E0003A061F /* Action.swift in Sources */,
 				17BC2F851DBCC9A7003A061F /* TextureObject.swift in Sources */,
 				17BC2F7C1DBCC86C003A061F /* Direction.swift in Sources */,
+				8AA2E6241DBCD89A004F3B53 /* EnemyISO.swift in Sources */,
 				2CEC2C471DA51FCC00386482 /* GameViewController.swift in Sources */,
+				8AA2E62A1DBCDF83004F3B53 /* Map2D.swift in Sources */,
 				176EFF681DBCD557003E4EF1 /* MapArray.swift in Sources */,
+				8AA2E6221DBCD7C1004F3B53 /* Paths.swift in Sources */,
+				8AA2E6261DBCD9D3004F3B53 /* Enemy2D.swift in Sources */,
 				176EFF661DBCD51C003E4EF1 /* TileObject.swift in Sources */,
 				17BC2F791DBCC82D003A061F /* Droid.swift in Sources */,
 				2CEC2C411DA51FCC00386482 /* AppDelegate.swift in Sources */,
@@ -230,7 +249,8 @@
 				176EFF6B1DBCD591003E4EF1 /* CGPointOperations.swift in Sources */,
 				17BC2F7E1DBCC8A2003A061F /* Tile.swift in Sources */,
 				17B75DD41DBCCB5A00B29008 /* Texture.swift in Sources */,
-				63D8C8774592E8B8BF0CA4F6 /* Map.swift in Sources */,
+				8AA2E6281DBCDBE3004F3B53 /* CoordsConvertion.swift in Sources */,
+				63D8C8774592E8B8BF0CA4F6 /* MapISO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,10 +363,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Q4T242PPZJ;
+				DEVELOPMENT_TEAM = 52GNMSFB79;
 				INFOPLIST_FILE = IsoGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = temp.IsoGame;
+				PRODUCT_BUNDLE_IDENTIFIER = AlexeyMukhin.IsoGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -357,10 +377,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Q4T242PPZJ;
+				DEVELOPMENT_TEAM = 52GNMSFB79;
 				INFOPLIST_FILE = IsoGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = temp.IsoGame;
+				PRODUCT_BUNDLE_IDENTIFIER = AlexeyMukhin.IsoGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
