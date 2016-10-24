@@ -12,7 +12,6 @@ class GameScene: SKScene {
     
     //Camera
     let cameraNode = SKCameraNode()
-    let playableRect: CGRect
     
     // Карта
     let map2D: Map2D
@@ -25,7 +24,6 @@ class GameScene: SKScene {
     override init(size: CGSize) {
         map2D = Map2D(enemy: enemy)
         mapISO = MapISO(enemy: enemy)
-        playableRect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         
         super.init(size: size)
         self.anchorPoint = CGPoint(x:0.5, y:0.5)
@@ -61,17 +59,6 @@ class GameScene: SKScene {
         
         mapISO.placeAllTilesISO()
         map2D.placeAllTiles2D()
-        
-        debugDrawPlayableArea()
-    }
-    
-    func debugDrawPlayableArea() {
-        let shape = SKShapeNode(rect: playableRect)
-        let path = CGMutablePath()
-        shape.path = path
-        shape.strokeColor = SKColor.red
-        shape.lineWidth = 4.0
-        addChild(shape)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -98,30 +85,11 @@ class GameScene: SKScene {
         for touch in touches {
             let location = touch.location(in: self)
             let previousLocation = touch.previousLocation(in: self)
-            
-            let adjustmentDuration = TimeInterval(1)
-            if location.x > size.width {
-                let adjust = SKAction.moveTo(x: size.width, duration: adjustmentDuration)
-                cameraNode.run(adjust)
-            } else if location.x < 0 {
-                let adjust = SKAction.moveTo(x: 0, duration: adjustmentDuration)
-                cameraNode.run(adjust)
-            } else {
-                let deltaX = location.x - previousLocation.x
-                cameraNode.position.x -= deltaX
-            }
-            
-            if location.y > size.height {
-                let adjust = SKAction.moveTo(y: size.height, duration: adjustmentDuration)
-                cameraNode.run(adjust)
-            } else if location.y < 0 {
-                let adjust = SKAction.moveTo(y: 0, duration: adjustmentDuration)
-                cameraNode.run(adjust)
-            } else {
-                let deltaY = location.y - previousLocation.y
-                cameraNode.position.y -= deltaY
-            }
-            
+
+            let deltaX = location.x - previousLocation.x
+            let deltaY = location.y - previousLocation.y
+            cameraNode.position.x -= deltaX
+            cameraNode.position.y -= deltaY
         }
     }
     
