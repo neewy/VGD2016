@@ -29,6 +29,22 @@
 		8AA2E63C1DBD5AFF004F3B53 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2E63A1DBD5AFF004F3B53 /* GameObject.swift */; };
 		8AA2E63E1DBD5B0F004F3B53 /* MapObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2E63D1DBD5B0F004F3B53 /* MapObject.swift */; };
 		8AA2E6401DBDFA5A004F3B53 /* Defender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2E63F1DBDFA5A004F3B53 /* Defender.swift */; };
+		AE4716311DBE18E6008CCCE6 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4716211DBE18E6008CCCE6 /* AnimationType.swift */; };
+		AE4716321DBE18E6008CCCE6 /* AttackModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4716221DBE18E6008CCCE6 /* AttackModifier.swift */; };
+		AE4716331DBE18E6008CCCE6 /* AttackType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4716231DBE18E6008CCCE6 /* AttackType.swift */; };
+		AE4716341DBE18E6008CCCE6 /* Buff.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4716241DBE18E6008CCCE6 /* Buff.swift */; };
+		AE4716351DBE18E6008CCCE6 /* Buffable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4716251DBE18E6008CCCE6 /* Buffable.swift */; };
+		AE4716361DBE18E6008CCCE6 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4716261DBE18E6008CCCE6 /* Building.swift */; };
+		AE4716371DBE18E6008CCCE6 /* Destroyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4716271DBE18E6008CCCE6 /* Destroyable.swift */; };
+		AE4716381DBE18E6008CCCE6 /* DestroyableUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4716281DBE18E6008CCCE6 /* DestroyableUnit.swift */; };
+		AE4716391DBE18E6008CCCE6 /* Directed.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4716291DBE18E6008CCCE6 /* Directed.swift */; };
+		AE47163A1DBE18E6008CCCE6 /* Moveable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE47162A1DBE18E6008CCCE6 /* Moveable.swift */; };
+		AE47163B1DBE18E6008CCCE6 /* Mujik.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE47162B1DBE18E6008CCCE6 /* Mujik.swift */; };
+		AE47163C1DBE18E6008CCCE6 /* Projectile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE47162C1DBE18E6008CCCE6 /* Projectile.swift */; };
+		AE47163D1DBE18E6008CCCE6 /* ProjectileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE47162D1DBE18E6008CCCE6 /* ProjectileType.swift */; };
+		AE47163E1DBE18E6008CCCE6 /* Tower.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE47162E1DBE18E6008CCCE6 /* Tower.swift */; };
+		AE47163F1DBE18E6008CCCE6 /* Trap.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE47162F1DBE18E6008CCCE6 /* Trap.swift */; };
+		AE4716401DBE18E6008CCCE6 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4716301DBE18E6008CCCE6 /* Unit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +72,22 @@
 		8AA2E63A1DBD5AFF004F3B53 /* GameObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameObject.swift; path = GameObjects/GameObject.swift; sourceTree = "<group>"; };
 		8AA2E63D1DBD5B0F004F3B53 /* MapObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapObject.swift; path = Map/MapObject.swift; sourceTree = "<group>"; };
 		8AA2E63F1DBDFA5A004F3B53 /* Defender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defender.swift; sourceTree = "<group>"; };
+		AE4716211DBE18E6008CCCE6 /* AnimationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationType.swift; sourceTree = "<group>"; };
+		AE4716221DBE18E6008CCCE6 /* AttackModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttackModifier.swift; sourceTree = "<group>"; };
+		AE4716231DBE18E6008CCCE6 /* AttackType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttackType.swift; sourceTree = "<group>"; };
+		AE4716241DBE18E6008CCCE6 /* Buff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buff.swift; sourceTree = "<group>"; };
+		AE4716251DBE18E6008CCCE6 /* Buffable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buffable.swift; sourceTree = "<group>"; };
+		AE4716261DBE18E6008CCCE6 /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
+		AE4716271DBE18E6008CCCE6 /* Destroyable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Destroyable.swift; sourceTree = "<group>"; };
+		AE4716281DBE18E6008CCCE6 /* DestroyableUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DestroyableUnit.swift; sourceTree = "<group>"; };
+		AE4716291DBE18E6008CCCE6 /* Directed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directed.swift; sourceTree = "<group>"; };
+		AE47162A1DBE18E6008CCCE6 /* Moveable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Moveable.swift; sourceTree = "<group>"; };
+		AE47162B1DBE18E6008CCCE6 /* Mujik.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mujik.swift; sourceTree = "<group>"; };
+		AE47162C1DBE18E6008CCCE6 /* Projectile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Projectile.swift; sourceTree = "<group>"; };
+		AE47162D1DBE18E6008CCCE6 /* ProjectileType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectileType.swift; sourceTree = "<group>"; };
+		AE47162E1DBE18E6008CCCE6 /* Tower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tower.swift; sourceTree = "<group>"; };
+		AE47162F1DBE18E6008CCCE6 /* Trap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trap.swift; sourceTree = "<group>"; };
+		AE4716301DBE18E6008CCCE6 /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +114,15 @@
 		17BC2F721DBCC7A8003A061F /* GameObjects */ = {
 			isa = PBXGroup;
 			children = (
+				AE4716451DBE1BB5008CCCE6 /* ToAdd */,
+				AE4716441DBE19C4008CCCE6 /* Enums */,
+				AE4716411DBE1914008CCCE6 /* Protocols */,
 				8AA2E63A1DBD5AFF004F3B53 /* GameObject.swift */,
+				AE4716431DBE1986008CCCE6 /* Hierarchy */,
 				8AA2E6391DBD5AFF004F3B53 /* Enemy.swift */,
+				AE47162E1DBE18E6008CCCE6 /* Tower.swift */,
+				AE47162C1DBE18E6008CCCE6 /* Projectile.swift */,
+				AE4716421DBE1954008CCCE6 /* Towers */,
 				8AA2E63F1DBDFA5A004F3B53 /* Defender.swift */,
 			);
 			name = GameObjects;
@@ -172,6 +211,55 @@
 			name = ISO;
 			sourceTree = "<group>";
 		};
+		AE4716411DBE1914008CCCE6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				AE4716251DBE18E6008CCCE6 /* Buffable.swift */,
+				AE4716271DBE18E6008CCCE6 /* Destroyable.swift */,
+				AE4716291DBE18E6008CCCE6 /* Directed.swift */,
+				AE47162A1DBE18E6008CCCE6 /* Moveable.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		AE4716421DBE1954008CCCE6 /* Towers */ = {
+			isa = PBXGroup;
+			children = (
+				AE47162B1DBE18E6008CCCE6 /* Mujik.swift */,
+			);
+			name = Towers;
+			sourceTree = "<group>";
+		};
+		AE4716431DBE1986008CCCE6 /* Hierarchy */ = {
+			isa = PBXGroup;
+			children = (
+				AE4716281DBE18E6008CCCE6 /* DestroyableUnit.swift */,
+				AE4716301DBE18E6008CCCE6 /* Unit.swift */,
+				AE4716261DBE18E6008CCCE6 /* Building.swift */,
+			);
+			name = Hierarchy;
+			sourceTree = "<group>";
+		};
+		AE4716441DBE19C4008CCCE6 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				AE4716211DBE18E6008CCCE6 /* AnimationType.swift */,
+				AE4716221DBE18E6008CCCE6 /* AttackModifier.swift */,
+				AE4716231DBE18E6008CCCE6 /* AttackType.swift */,
+				AE4716241DBE18E6008CCCE6 /* Buff.swift */,
+				AE47162D1DBE18E6008CCCE6 /* ProjectileType.swift */,
+			);
+			name = Enums;
+			sourceTree = "<group>";
+		};
+		AE4716451DBE1BB5008CCCE6 /* ToAdd */ = {
+			isa = PBXGroup;
+			children = (
+				AE47162F1DBE18E6008CCCE6 /* Trap.swift */,
+			);
+			name = ToAdd;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -246,21 +334,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE47163C1DBE18E6008CCCE6 /* Projectile.swift in Sources */,
 				2CEC2C451DA51FCC00386482 /* GameScene.swift in Sources */,
+				AE4716371DBE18E6008CCCE6 /* Destroyable.swift in Sources */,
+				AE4716331DBE18E6008CCCE6 /* AttackType.swift in Sources */,
+				AE4716341DBE18E6008CCCE6 /* Buff.swift in Sources */,
 				17BC2F801DBCC8E0003A061F /* Action.swift in Sources */,
+				AE4716351DBE18E6008CCCE6 /* Buffable.swift in Sources */,
 				17BC2F7C1DBCC86C003A061F /* Direction.swift in Sources */,
 				2CEC2C471DA51FCC00386482 /* GameViewController.swift in Sources */,
+				AE4716361DBE18E6008CCCE6 /* Building.swift in Sources */,
 				8AA2E62A1DBCDF83004F3B53 /* Map2D.swift in Sources */,
 				176EFF681DBCD557003E4EF1 /* MapArray.swift in Sources */,
+				AE47163F1DBE18E6008CCCE6 /* Trap.swift in Sources */,
+				AE4716401DBE18E6008CCCE6 /* Unit.swift in Sources */,
+				AE47163B1DBE18E6008CCCE6 /* Mujik.swift in Sources */,
 				8AA2E6221DBCD7C1004F3B53 /* PathFinder.swift in Sources */,
 				8AA2E6361DBCFA19004F3B53 /* GlobalVars.swift in Sources */,
 				2CEC2C411DA51FCC00386482 /* AppDelegate.swift in Sources */,
 				8AA2E6401DBDFA5A004F3B53 /* Defender.swift in Sources */,
+				AE4716311DBE18E6008CCCE6 /* AnimationType.swift in Sources */,
 				176EFF6B1DBCD591003E4EF1 /* CGPointOperations.swift in Sources */,
 				17BC2F7E1DBCC8A2003A061F /* Tile.swift in Sources */,
 				8AA2E63B1DBD5AFF004F3B53 /* Enemy.swift in Sources */,
+				AE4716321DBE18E6008CCCE6 /* AttackModifier.swift in Sources */,
+				AE47163A1DBE18E6008CCCE6 /* Moveable.swift in Sources */,
+				AE47163E1DBE18E6008CCCE6 /* Tower.swift in Sources */,
+				AE4716381DBE18E6008CCCE6 /* DestroyableUnit.swift in Sources */,
 				8AA2E63C1DBD5AFF004F3B53 /* GameObject.swift in Sources */,
 				17B75DD41DBCCB5A00B29008 /* TextureObject.swift in Sources */,
+				AE4716391DBE18E6008CCCE6 /* Directed.swift in Sources */,
+				AE47163D1DBE18E6008CCCE6 /* ProjectileType.swift in Sources */,
 				8AA2E6281DBCDBE3004F3B53 /* CoordsConvertion.swift in Sources */,
 				8AA2E63E1DBD5B0F004F3B53 /* MapObject.swift in Sources */,
 				63D8C8774592E8B8BF0CA4F6 /* MapISO.swift in Sources */,

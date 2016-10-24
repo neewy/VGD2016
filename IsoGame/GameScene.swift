@@ -107,4 +107,7 @@ class GameScene: SKScene {
     func updateOnNthFrame() {
         mapISO.sortDepth()
     }
-}
+    
+    }
+
+
