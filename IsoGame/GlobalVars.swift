@@ -12,7 +12,7 @@ let TILE_SIZE = (width:32, height:32)
 
 struct Global {
     struct tilePath {
-        static let traversable = 3
+        static let traversable = 1
         static let nonTraversable = 0
     }
 }

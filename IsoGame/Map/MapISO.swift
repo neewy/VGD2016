@@ -1,11 +1,3 @@
-//
-//  Map.swift
-//  IsoGame
-//
-//  Created by Nikolay Yushkevich on 23.10.16.
-//  Copyright © 2016 Dmitriy Kapitun. All rights reserved.
-//
-
 import SpriteKit
 
 class MapISO {
@@ -36,6 +28,11 @@ class MapISO {
         
         tileSprite.anchorPoint = CGPoint(x:0, y:0)
         
+        if (tile == Tile.road) {
+            tileSprite.color = .brown
+            tileSprite.colorBlendFactor = 0.45;
+            layerIsoGround.addChild(tileSprite)
+        }
         if (tile == Tile.ground) {
             layerIsoGround.addChild(tileSprite)
         } else if (tile == Tile.wall || tile == Tile.droid) {
@@ -57,7 +54,7 @@ class MapISO {
                 let point = point2DToIso(CGPoint(x: (j*tileSize.width), y: -(i*tileSize.height)))
                 
                 if (tile == Tile.droid) {
-                    placeTileIso(Tile.ground, direction:direction, position:point)
+                    placeTileIso(Tile.road, direction:direction, position:point)
                 }
                 
                 placeTileIso(tile, direction:direction, position:point)

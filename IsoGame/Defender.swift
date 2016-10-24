@@ -8,6 +8,10 @@
 
 import UIKit
 
-class Tower: NSObject {
-
+class Defender: GameObject {
+    
+    // Инициализируем с какой-то картинкой
+    init() {
+        super.init(tile: Tile.droid)
+    }
 }

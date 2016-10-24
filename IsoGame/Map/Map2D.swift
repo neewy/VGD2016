@@ -1,11 +1,3 @@
-//
-//  Map.swift
-//  IsoGame
-//
-//  Created by Nikolay Yushkevich on 23.10.16.
-//  Copyright © 2016 Dmitriy Kapitun. All rights reserved.
-//
-
 import SpriteKit
 
 
@@ -23,6 +15,10 @@ class Map2D {
         
         let tileSprite = SKSpriteNode(imageNamed: textureImage(tile, direction: direction, action: Action.idle))
         
+        if (tile == Tile.road) {
+            tileSprite.color = .brown
+            tileSprite.colorBlendFactor = 0.45;
+        }
         if (tile == enemy.tile) {
             enemy.tileSprite2D = tileSprite
             enemy.tileSprite2D.zPosition = 1
@@ -50,7 +46,7 @@ class Map2D {
                 let point = CGPoint(x: (j*TILE_SIZE.width), y: -(i*TILE_SIZE.height))
                 
                 if (tile == Tile.droid) {
-                    placeTile2D(Tile.ground, direction:direction, position:point)
+                    placeTile2D(Tile.road, direction:direction, position:point)
                 }
                 
                 placeTile2D(tile, direction:direction, position:point)

@@ -15,9 +15,38 @@ class Enemy: GameObject {
         super.init(tile: Tile.droid)
     }
     
+    
+    // Идти в определенную точку
+    func goTo(position: CGPoint) {
+        // Adjust for the isometric tile anchor point offset
+        var correctPosition = position + CGPoint(x: TILE_SIZE.width/2, y: -TILE_SIZE.height/2)
+        
+        // Adjust for the 2D hero tile anchor point offset
+        correctPosition = correctPosition + CGPoint(x:-TILE_SIZE.width/2, y:-TILE_SIZE.height/2)
+        
+        //1
+        let deltaY = correctPosition.y - tileSprite2D.position.y
+        let deltaX = correctPosition.x - tileSprite2D.position.x
+        
+        //2
+        let degrees = atan2(deltaX, deltaY) * (180.0 / CGFloat(M_PI))
+        
+        //3
+        facing = degreesToDirection(degrees)
+        //4
+        update()
+        
+        let velocity = 100
+        let time = TimeInterval(distance(correctPosition, p2: tileSprite2D.position)/CGFloat(velocity))
+        tileSprite2D.removeAllActions()
+        tileSprite2D.run(SKAction.move(to: correctPosition, duration: time))
+    }
+    
+    
+    // Идти по пути
     func goThroughPath(path: [CGPoint]){
         
-        var path2 = findPathFrom(from: point2DToPointTileIndex(point: path[1]), to: point2DToPointTileIndex(point: path[2]))
+        var path2 = findPathFrom(from: point2DToPointTileIndex(point: path[0]), to: point2DToPointTileIndex(point: path[1]))
         print(path2)
         
         if (path2 != nil) {

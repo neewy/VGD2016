@@ -69,7 +69,7 @@ func traversableTiles() -> [[Int]] {
     
     //2
     func binarize(num:Int) ->Int {
-        if (num == 0) {
+        if (num == 0 || num == 1) {
             return Global.tilePath.nonTraversable
         } else {
             return Global.tilePath.traversable

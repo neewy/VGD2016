@@ -57,7 +57,7 @@ func textureImage(_ tile:Tile, direction:Direction, action:Action) -> String {
         case .nw:return "wall_nw"
         }
     case .road:
-        return ""
+        return "ground"
     }
     
 }

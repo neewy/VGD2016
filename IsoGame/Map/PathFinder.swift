@@ -68,7 +68,6 @@ class PathFinder {
                 lowF = curF
                 curNode = obj.1
             }
-            
         }
         
         

@@ -28,6 +28,7 @@
 		8AA2E63B1DBD5AFF004F3B53 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2E6391DBD5AFF004F3B53 /* Enemy.swift */; };
 		8AA2E63C1DBD5AFF004F3B53 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2E63A1DBD5AFF004F3B53 /* GameObject.swift */; };
 		8AA2E63E1DBD5B0F004F3B53 /* MapObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2E63D1DBD5B0F004F3B53 /* MapObject.swift */; };
+		8AA2E6401DBDFA5A004F3B53 /* Defender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2E63F1DBDFA5A004F3B53 /* Defender.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		8AA2E6391DBD5AFF004F3B53 /* Enemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Enemy.swift; path = GameObjects/Enemy.swift; sourceTree = "<group>"; };
 		8AA2E63A1DBD5AFF004F3B53 /* GameObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameObject.swift; path = GameObjects/GameObject.swift; sourceTree = "<group>"; };
 		8AA2E63D1DBD5B0F004F3B53 /* MapObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapObject.swift; path = Map/MapObject.swift; sourceTree = "<group>"; };
+		8AA2E63F1DBDFA5A004F3B53 /* Defender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defender.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +82,9 @@
 		17BC2F721DBCC7A8003A061F /* GameObjects */ = {
 			isa = PBXGroup;
 			children = (
-				8AA2E6391DBD5AFF004F3B53 /* Enemy.swift */,
 				8AA2E63A1DBD5AFF004F3B53 /* GameObject.swift */,
+				8AA2E6391DBD5AFF004F3B53 /* Enemy.swift */,
+				8AA2E63F1DBDFA5A004F3B53 /* Defender.swift */,
 			);
 			name = GameObjects;
 			sourceTree = "<group>";
@@ -92,7 +95,6 @@
 				8AA2E63D1DBD5B0F004F3B53 /* MapObject.swift */,
 				8AA2E6321DBCE87B004F3B53 /* ISO */,
 				8AA2E6311DBCE873004F3B53 /* 2D */,
-				17BC2F7A1DBCC856003A061F /* Enums */,
 				176EFF671DBCD557003E4EF1 /* MapArray.swift */,
 				8AA2E6211DBCD7C1004F3B53 /* PathFinder.swift */,
 			);
@@ -139,6 +141,7 @@
 				8AA2E6351DBCFA19004F3B53 /* GlobalVars.swift */,
 				176EFF691DBCD56A003E4EF1 /* Utils */,
 				17BC2F831DBCC95D003A061F /* Texture */,
+				17BC2F7A1DBCC856003A061F /* Enums */,
 				17BC2F731DBCC7B3003A061F /* Map */,
 				17BC2F721DBCC7A8003A061F /* GameObjects */,
 				2CEC2C561DA5202D00386482 /* sprites.atlas */,
@@ -252,6 +255,7 @@
 				8AA2E6221DBCD7C1004F3B53 /* PathFinder.swift in Sources */,
 				8AA2E6361DBCFA19004F3B53 /* GlobalVars.swift in Sources */,
 				2CEC2C411DA51FCC00386482 /* AppDelegate.swift in Sources */,
+				8AA2E6401DBDFA5A004F3B53 /* Defender.swift in Sources */,
 				176EFF6B1DBCD591003E4EF1 /* CGPointOperations.swift in Sources */,
 				17BC2F7E1DBCC8A2003A061F /* Tile.swift in Sources */,
 				8AA2E63B1DBD5AFF004F3B53 /* Enemy.swift in Sources */,
