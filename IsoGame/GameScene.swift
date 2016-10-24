@@ -38,9 +38,9 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         
         let deviceScale = self.size.width/667
-    
         
-        mapISO.view.position = CGPoint(x:0, y:self.size.height*0.2)
+        
+        mapISO.view.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
         mapISO.view.xScale = deviceScale
         mapISO.view.yScale = deviceScale
         mapISO.view.addChild(mapISO.layerIsoGround)
@@ -52,12 +52,8 @@ class GameScene: SKScene {
         cameraNode.zPosition = CGFloat(UInt32.max)
         addChild(cameraNode)
         camera = cameraNode
-        if enemy.tileSpriteISO != nil {
-            cameraNode.position = enemy.tileSpriteISO.position
-        } else {
-            cameraNode.position.x = size.width / 2
-            cameraNode.position.y = size.height / 2
-        }
+        cameraNode.position.x = size.width / 2
+        cameraNode.position.y = size.height / 2
         
         map2D.view.position = CGPoint(x:-self.size.width*0.5, y:self.size.height*0.4)
         map2D.view.xScale = deviceScale / 4
@@ -90,6 +86,18 @@ class GameScene: SKScene {
         //enemy.goTo(position: touchPosition2D)
     }
     
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            let location = touch.location(in: self)
+            let previousLocation = touch.previousLocation(in: self)
+
+            let deltaX = location.x - previousLocation.x
+            let deltaY = location.y - previousLocation.y
+            cameraNode.position.x -= deltaX
+            cameraNode.position.y -= deltaY
+        }
+    }
+    
     override func update(_ currentTime: TimeInterval) {
         
         enemy.tileSpriteISO.position = point2DToIso(enemy.tileSprite2D.position)
@@ -98,14 +106,6 @@ class GameScene: SKScene {
         if (nthFrameCount == nthFrame) {
             nthFrameCount = 0
             updateOnNthFrame()
-        }
-        
-        //Move camera
-        if enemy.tileSpriteISO != nil {
-            cameraNode.position = enemy.tileSpriteISO.position
-        } else {
-            cameraNode.position.x = size.width / 2
-            cameraNode.position.y = size.height / 2
         }
     }
     
