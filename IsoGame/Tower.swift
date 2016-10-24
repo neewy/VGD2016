@@ -20,7 +20,7 @@ class Tower: Building, Directed, Buffable{
     var attackModifier: AttackModifier
     var attackType: AttackType
     var projectile: ProjectileType
-    var currentTarget: Unit?
+    var currentTarget: DestroyableUnit?
     
     init(sprite: SKSpriteNode, position: CGPoint, occupied: [Int], cost: Int, attackspeed: CGFloat, damage: CGFloat, range: CGFloat, attackModifier: AttackModifier, attackType: AttackType, projectile: ProjectileType, direction: Direction) {
         attackSpeed = attackspeed
@@ -42,39 +42,49 @@ class Tower: Building, Directed, Buffable{
     }
     
     //Single attack of the tower
-
-    func attack(target: DestroyableUnit){
-//        if  target!=null
-        let dist = distance(sprite.position, p2: target.sprite.position)
-        if range >= dist {
-            //Generate new projectile towards target
-//            weak let proj = Projectile(sprite: SKSpriteNode(imageNamed: "droid_e.png"), target: target, missledBy: self, velocity: 500.0)
-        } else{
-            currentTarget = nil //target is too far
+    
+    //Choose new target for the tower
+    func aim(target: DestroyableUnit?){
+        if  target != nil {
+            let dist = distance(sprite.position, p2: target!.sprite.position)
+            if range >= dist {
+                currentTarget = target
+            }
         }
-//        }
     }
     
-    func attackScript(){
+    //Generate new projectile towards target
+    func attack() -> Projectile?{
+        if currentTarget != nil{
+            return Projectile(sprite: SKSpriteNode(imageNamed: "droid_e.png"), position: sprite.position , target: currentTarget!, missledBy: self, velocity: 500.0)
+        }
+        return nil
+    }
+    
+    //Attack behavior of the tower
+    func attackScript(projectiles: NSMutableArray, enemies: NSMutableArray){
         let attack = SKAction.run({
-            if self.currentTarget==nil{
-            let target = self.scan()
-                self.attack(target: target!)}
+            if self.currentTarget==nil{ // has no target
+                self.currentTarget = self.scan(enemies: enemies)} //look for it
+            else {
+                projectiles.add(self.attack())} //attack
         })
         let wait = SKAction.wait(forDuration: TimeInterval(attackSpeed))
         SKAction.repeatForever(SKAction.sequence([attack, wait]))
     }
     
-    //return closest unit
-    func scan() -> DestroyableUnit?{
-        return nil
-    }
-    
-    func playAnimation(animationType: AnimationType){
-        
-    }
-    
-    func update(){
-        
+    //Return closest unit
+    func scan(enemies: NSMutableArray) -> DestroyableUnit?{
+        var target: DestroyableUnit?
+        var minDist = self.range
+        for node in enemies{
+            let enemy = node as! DestroyableUnit
+            let dist = distance(self.sprite.position, p2: enemy.sprite.position)
+            if dist < minDist{
+                minDist = dist
+                target = enemy
+            }
+        }
+        return target
     }
 }

@@ -31,7 +31,7 @@ class Building: Unit{
     }
     
     func remove(){
-
+        
     }
     
     //Removes and builds new tower on the same position
@@ -43,5 +43,9 @@ class Building: Unit{
     //Opens the interaction mode in the tower
     func interact(){
         
+    }
+    
+    deinit {
+        print ("Building is removed")
     }
 }

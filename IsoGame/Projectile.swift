@@ -10,7 +10,7 @@ import Foundation
 import SpriteKit
 
 class Projectile: Unit{
-    let missledBy: Tower!
+    let missledBy: Tower
     weak var target: DestroyableUnit?
     let velocity: CGFloat
     let dt = 0.1 //TODO: transfer to GLOBAL
@@ -33,8 +33,17 @@ class Projectile: Unit{
         //play animation of death of projectile
     }
     
+    func isCollision() -> Bool{
+        if target != nil{
+            let dist = distance(sprite.position, p2: target!.sprite.position)
+            return dist < (target?.sprite.frame.width)!/2
+        }
+        return false
+    }
+    
     deinit {
         sprite.removeFromParent()
+        print ("removed projectile")
     }
     
     

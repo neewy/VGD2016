@@ -8,6 +8,10 @@ class GameScene: SKScene {
     }
     
     // Hero object in 2D and ISOMETRIC
+    // Collections for different types of units:
+    var projectiles: NSMutableArray = []
+    var towers: NSMutableArray = []
+    var enemies: NSMutableArray = []
     let enemy = Enemy()
     
     //Camera
@@ -27,6 +31,7 @@ class GameScene: SKScene {
         
         super.init(size: size)
         self.anchorPoint = CGPoint(x:0.5, y:0.5)
+//        placeTower(position: CGPoint(x: 400.0, y: 400.0), direction: Direction.e)
     }
     
     //5
@@ -108,6 +113,35 @@ class GameScene: SKScene {
         mapISO.sortDepth()
     }
     
+    
+    //To build a new tower we need to place it in object layer in ISO map
+    func placeTower(position: CGPoint, direction: Direction){
+        //if is not occupied
+        let mujik = Mujik(position: position, direction: direction) //initialize new object
+        mapISO.view.addChild(mujik.sprite) // add sprite object (representation)
+        towers.add(mujik) //add to collection of objects
+        //TODO: occupy() label tile under tower position as occupied
     }
+    
+    //Checks collisions of projectiles with targets
+    func checkCollisions(){
+        for node in projectiles{
+            let projectile = node as! Projectile
+            if projectile.isCollision(){
+                projectiles.remove(node)
+            }
+        }
+    }
+    
+    //Command to start attack for all the towers
+    func towersAttack(){
+        for node in towers{
+            let tower = node as! Tower
+            tower.attackScript(projectiles: projectiles, enemies: enemies)
+        }
+    }
+}
+
+
 
 
