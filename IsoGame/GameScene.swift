@@ -12,6 +12,7 @@ class GameScene: SKScene {
     
     //Camera
     let cameraNode = SKCameraNode()
+    let playableRect: CGRect
     
     // Карта
     let map2D: Map2D
@@ -24,6 +25,7 @@ class GameScene: SKScene {
     override init(size: CGSize) {
         map2D = Map2D(enemy: enemy)
         mapISO = MapISO(enemy: enemy)
+        playableRect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         
         super.init(size: size)
         self.anchorPoint = CGPoint(x:0.5, y:0.5)
@@ -33,7 +35,7 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         
         let deviceScale = self.size.width/667
-    
+        
         
         mapISO.view.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
         mapISO.view.xScale = deviceScale
@@ -59,6 +61,17 @@ class GameScene: SKScene {
         
         mapISO.placeAllTilesISO()
         map2D.placeAllTiles2D()
+        
+        debugDrawPlayableArea()
+    }
+    
+    func debugDrawPlayableArea() {
+        let shape = SKShapeNode(rect: playableRect)
+        let path = CGMutablePath()
+        shape.path = path
+        shape.strokeColor = SKColor.red
+        shape.lineWidth = 4.0
+        addChild(shape)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
