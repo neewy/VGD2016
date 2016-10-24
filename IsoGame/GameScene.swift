@@ -35,7 +35,7 @@ class GameScene: SKScene {
         let deviceScale = self.size.width/667
     
         
-        mapISO.view.position = CGPoint(x:0, y:self.size.height*0.2)
+        mapISO.view.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
         mapISO.view.xScale = deviceScale
         mapISO.view.yScale = deviceScale
         mapISO.view.addChild(mapISO.layerIsoGround)
@@ -47,12 +47,8 @@ class GameScene: SKScene {
         cameraNode.zPosition = CGFloat(UInt32.max)
         addChild(cameraNode)
         camera = cameraNode
-        if enemy.tileSpriteISO != nil {
-            cameraNode.position = enemy.tileSpriteISO.position
-        } else {
-            cameraNode.position.x = size.width / 2
-            cameraNode.position.y = size.height / 2
-        }
+        cameraNode.position.x = size.width / 2
+        cameraNode.position.y = size.height / 2
         
         map2D.view.position = CGPoint(x:-self.size.width*0.5, y:self.size.height*0.4)
         map2D.view.xScale = deviceScale / 4
@@ -85,6 +81,37 @@ class GameScene: SKScene {
         //enemy.goTo(position: touchPosition2D)
     }
     
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            let location = touch.location(in: self)
+            let previousLocation = touch.previousLocation(in: self)
+            
+            let adjustmentDuration = TimeInterval(1)
+            if location.x > size.width {
+                let adjust = SKAction.moveTo(x: size.width, duration: adjustmentDuration)
+                cameraNode.run(adjust)
+            } else if location.x < 0 {
+                let adjust = SKAction.moveTo(x: 0, duration: adjustmentDuration)
+                cameraNode.run(adjust)
+            } else {
+                let deltaX = location.x - previousLocation.x
+                cameraNode.position.x -= deltaX
+            }
+            
+            if location.y > size.height {
+                let adjust = SKAction.moveTo(y: size.height, duration: adjustmentDuration)
+                cameraNode.run(adjust)
+            } else if location.y < 0 {
+                let adjust = SKAction.moveTo(y: 0, duration: adjustmentDuration)
+                cameraNode.run(adjust)
+            } else {
+                let deltaY = location.y - previousLocation.y
+                cameraNode.position.y -= deltaY
+            }
+            
+        }
+    }
+    
     override func update(_ currentTime: TimeInterval) {
         
         enemy.tileSpriteISO.position = point2DToIso(enemy.tileSprite2D.position)
@@ -93,14 +120,6 @@ class GameScene: SKScene {
         if (nthFrameCount == nthFrame) {
             nthFrameCount = 0
             updateOnNthFrame()
-        }
-        
-        //Move camera
-        if enemy.tileSpriteISO != nil {
-            cameraNode.position = enemy.tileSpriteISO.position
-        } else {
-            cameraNode.position.x = size.width / 2
-            cameraNode.position.y = size.height / 2
         }
     }
     
