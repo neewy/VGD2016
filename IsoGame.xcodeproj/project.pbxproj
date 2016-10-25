@@ -21,6 +21,7 @@
 		2CEC2C4F1DA51FCC00386482 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CEC2C4D1DA51FCC00386482 /* LaunchScreen.storyboard */; };
 		2CEC2C571DA5202D00386482 /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 2CEC2C561DA5202D00386482 /* sprites.atlas */; };
 		63D8C8774592E8B8BF0CA4F6 /* MapISO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8CA46D88EC4AE1DE4E1E3 /* MapISO.swift */; };
+		63D8CBBBC6364CB88B223669 /* NewTiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C60529417B344AABDA32 /* NewTiles.swift */; };
 		8AA2E6221DBCD7C1004F3B53 /* PathFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2E6211DBCD7C1004F3B53 /* PathFinder.swift */; };
 		8AA2E6281DBCDBE3004F3B53 /* CoordsConvertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2E6271DBCDBE3004F3B53 /* CoordsConvertion.swift */; };
 		8AA2E62A1DBCDF83004F3B53 /* Map2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2E6291DBCDF83004F3B53 /* Map2D.swift */; };
@@ -63,6 +64,7 @@
 		2CEC2C4E1DA51FCC00386482 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CEC2C501DA51FCC00386482 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CEC2C561DA5202D00386482 /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
+		63D8C60529417B344AABDA32 /* NewTiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTiles.swift; sourceTree = "<group>"; };
 		63D8CA46D88EC4AE1DE4E1E3 /* MapISO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapISO.swift; path = Map/MapISO.swift; sourceTree = "<group>"; };
 		8AA2E6211DBCD7C1004F3B53 /* PathFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PathFinder.swift; path = Map/PathFinder.swift; sourceTree = "<group>"; };
 		8AA2E6271DBCDBE3004F3B53 /* CoordsConvertion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoordsConvertion.swift; path = IsoGame/Utils/CoordsConvertion.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				17BC2F7B1DBCC86C003A061F /* Direction.swift */,
 				17BC2F7D1DBCC8A2003A061F /* Tile.swift */,
 				17BC2F7F1DBCC8E0003A061F /* Action.swift */,
+				63D8C60529417B344AABDA32 /* NewTiles.swift */,
 			);
 			name = Enums;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				8AA2E6281DBCDBE3004F3B53 /* CoordsConvertion.swift in Sources */,
 				8AA2E63E1DBD5B0F004F3B53 /* MapObject.swift in Sources */,
 				63D8C8774592E8B8BF0CA4F6 /* MapISO.swift in Sources */,
+				63D8CBBBC6364CB88B223669 /* NewTiles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

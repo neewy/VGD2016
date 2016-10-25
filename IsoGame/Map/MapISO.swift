@@ -25,45 +25,29 @@ class MapISO {
         }
     }
     
-    func placeTileISO(_ tile:Tile, direction:Direction, position:CGPoint) {
+    func placeTileISO(_ tile:NewTile, direction:Direction, position:CGPoint) {
         
-        let tileSprite = SKSpriteNode(imageNamed: "iso_3d_"+textureImage(tile, direction: direction, action: Action.idle))
+        let tileSprite = SKSpriteNode(imageNamed: textureImage(tile, direction: direction, action: Action.idle))
         
         tileSprite.position = position
         
         tileSprite.anchorPoint = CGPoint(x:0, y:0)
-        
-        if (tile == Tile.road) {
-            tileSprite.color = .brown
-            tileSprite.colorBlendFactor = 0.45;
-            layerIsoGround.addChild(tileSprite)
-        }
-        if (tile == Tile.ground) {
-            layerIsoGround.addChild(tileSprite)
-        } else if (tile == Tile.wall || tile == Tile.droid) {
-            layerIsoObjects.addChild(tileSprite)
-        }
-        
+        layerIsoGround.addChild(tileSprite)
     }
     
     func placeAllTilesISO() {
         
-        for i in 0..<tiles.count {
+        for i in 0..<newTiles.count {
             
-            let row = tiles[i];
+            let row = newTiles[i];
             
             for j in 0..<row.count {
                 
-                let tile = Tile(rawValue: row[j].0)!
-                let direction = Direction(rawValue: row[j].1)!
+                let tile = NewTile(rawValue: row[j])!
                 
                 let point = point2DToIso(CGPoint(x: (j*tileSize.width), y: -(i*tileSize.height)))
-                
-                if (tile == Tile.droid) {
-                    placeTileISO(Tile.road, direction:direction, position:point)
-                }
-                
-                placeTileISO(tile, direction:direction, position:point)
+
+                placeTileISO(tile, direction: Direction.n, position:point)
                 
             }
         }
