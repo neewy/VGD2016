@@ -26,8 +26,8 @@ class GameScene: SKScene {
     
     //4
     override init(size: CGSize) {
-        map2D = Map2D(enemy: enemy)
-        mapISO = MapISO(enemy: enemy)
+        map2D = Map2D()
+        mapISO = MapISO()
         
         super.init(size: size)
         self.anchorPoint = CGPoint(x:0.5, y:0.5)
@@ -38,7 +38,6 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         
         let deviceScale = self.size.width/667
-        
         
         mapISO.view.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
         mapISO.view.xScale = deviceScale
@@ -60,10 +59,25 @@ class GameScene: SKScene {
         map2D.view.yScale = deviceScale / 4
         map2D.view.zPosition = cameraNode.zPosition
         map2D.view.alpha = 0.80
-        cameraNode.addChild(map2D.view)
+        cameraNode.addChild(map2D.view)        
+        
+        
+        // Adjust for the isometric tile anchor point offset
+        var correctPosition = CGPoint(x:30.8593826293945, y:-197.851570129395) + CGPoint(x: TILE_SIZE.width/2, y: -TILE_SIZE.height/2)
+        
+        // Adjust for the 2D hero tile anchor point offset
+        correctPosition = correctPosition + CGPoint(x:-TILE_SIZE.width/2, y:-TILE_SIZE.height/2)
+        
+        map2D.placeObject(enemy, onPosition: correctPosition)
+        mapISO.placeObject(enemy, onPosition: point2DToIso(correctPosition))
         
         mapISO.placeAllTilesISO()
         map2D.placeAllTiles2D()
+        
+        var positions = [CGPoint]()
+        positions.append(CGPoint(x:30.8593826293945, y:-197.851570129395))
+        positions.append(CGPoint(x:507.91015625, y:-230.56640625))
+        self.enemy.goThroughPath(path: positions)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -76,11 +90,12 @@ class GameScene: SKScene {
         var touchPosition2D = pointIsoTo2D(touchPositionISO)
         
         print(touchPosition2D)
+        
+        var newenem = Enemy()
+        map2D.placeObject(newenem, onPosition: touchPosition2D)
+        mapISO.placeObject(newenem, onPosition: point2DToIso(touchPosition2D))
 
-        var positions = [CGPoint]()
-        positions.append(CGPoint(x:30.8593826293945, y:-197.851570129395))
-        positions.append(CGPoint(x:507.91015625, y:-230.56640625))
-        self.enemy.goThroughPath(path: positions)
+        
         
         // Перемещаем 2D узел
         //enemy.goTo(position: touchPosition2D)
@@ -99,7 +114,6 @@ class GameScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
-        
         enemy.tileSpriteISO.position = point2DToIso(enemy.tileSprite2D.position)
         
         nthFrameCount += 1

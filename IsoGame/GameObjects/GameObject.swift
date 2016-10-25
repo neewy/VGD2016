@@ -24,6 +24,8 @@ class GameObject: TileObject {
     init(tile: Tile) {
         facing = Direction.e
         action = Action.idle
+        self.tileSpriteISO = SKSpriteNode(imageNamed: "iso_3d_"+textureImage(tile, direction: facing, action: Action.idle))
+        self.tileSprite2D = SKSpriteNode(imageNamed: textureImage(tile, direction: facing, action: Action.idle))
         self.tile = tile
     }
     

@@ -13,6 +13,7 @@ class Enemy: GameObject {
     
     init() {
         super.init(tile: Tile.droid)
+
     }
     
     
@@ -109,7 +110,11 @@ class Enemy: GameObject {
             
             //12
             tileSprite2D.removeAllActions()
+            print(tiles)
+
             tileSprite2D.run(SKAction.sequence(actions))
+            print(tiles)
+
             }
     }
 }

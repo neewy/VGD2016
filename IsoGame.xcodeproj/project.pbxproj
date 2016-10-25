@@ -292,7 +292,7 @@
 				TargetAttributes = {
 					2CEC2C3C1DA51FCC00386482 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 52GNMSFB79;
+						DevelopmentTeam = E342J9DHMH;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -485,10 +485,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 52GNMSFB79;
+				DEVELOPMENT_TEAM = E342J9DHMH;
 				INFOPLIST_FILE = IsoGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = AlexeyMukhin.IsoGame;
+				PRODUCT_BUNDLE_IDENTIFIER = IsoGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -499,10 +499,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 52GNMSFB79;
+				DEVELOPMENT_TEAM = E342J9DHMH;
 				INFOPLIST_FILE = IsoGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = AlexeyMukhin.IsoGame;
+				PRODUCT_BUNDLE_IDENTIFIER = IsoGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

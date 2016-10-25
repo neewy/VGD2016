@@ -5,24 +5,29 @@ class MapISO {
     let view:SKSpriteNode
     let layerIsoGround:SKNode
     let layerIsoObjects:SKNode
-    let enemy: Enemy
     
     let tileSize = TILE_SIZE
     
-    init(enemy: Enemy) {
+    init() {
         view = SKSpriteNode()
         layerIsoGround = SKNode()
         layerIsoObjects = SKNode()
-        self.enemy = enemy
     }
     
-    func placeTileIso(_ tile:Tile, direction:Direction, position:CGPoint) {
+    func placeObject(_ objectToPlace:GameObject, onPosition:CGPoint) {
+
+        objectToPlace.tileSpriteISO.position = onPosition
+        
+        objectToPlace.tileSpriteISO.anchorPoint = CGPoint(x:0, y:0)
+        
+        if (objectToPlace.tile == Tile.wall || objectToPlace.tile == Tile.droid) {
+            layerIsoObjects.addChild(objectToPlace.tileSpriteISO)
+        }
+    }
+    
+    func placeTileISO(_ tile:Tile, direction:Direction, position:CGPoint) {
         
         let tileSprite = SKSpriteNode(imageNamed: "iso_3d_"+textureImage(tile, direction: direction, action: Action.idle))
-        
-        if (tile == enemy.tile) {
-            enemy.tileSpriteISO = tileSprite
-        }
         
         tileSprite.position = position
         
@@ -40,6 +45,7 @@ class MapISO {
         }
         
     }
+    
     func placeAllTilesISO() {
         
         for i in 0..<tiles.count {
@@ -54,10 +60,10 @@ class MapISO {
                 let point = point2DToIso(CGPoint(x: (j*tileSize.width), y: -(i*tileSize.height)))
                 
                 if (tile == Tile.droid) {
-                    placeTileIso(Tile.road, direction:direction, position:point)
+                    placeTileISO(Tile.road, direction:direction, position:point)
                 }
                 
-                placeTileIso(tile, direction:direction, position:point)
+                placeTileISO(tile, direction:direction, position:point)
                 
             }
         }

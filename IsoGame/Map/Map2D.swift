@@ -4,11 +4,19 @@ import SpriteKit
 class Map2D {
     //2
     let view:SKSpriteNode
-    let enemy: Enemy
-        
-    init(enemy: Enemy) {
+    
+    init() {
         view = SKSpriteNode()
-        self.enemy = enemy
+    }
+    
+    func placeObject(_ objectToPlace:GameObject, onPosition:CGPoint) {
+        
+        objectToPlace.tileSprite2D.position = onPosition
+        
+        objectToPlace.tileSprite2D.anchorPoint = CGPoint(x:0, y:0)
+ 
+        view.addChild(objectToPlace.tileSprite2D)
+
     }
     
     func placeTile2D(_ tile:Tile, direction:Direction, position:CGPoint) {
@@ -18,10 +26,6 @@ class Map2D {
         if (tile == Tile.road) {
             tileSprite.color = .brown
             tileSprite.colorBlendFactor = 0.45;
-        }
-        if (tile == enemy.tile) {
-            enemy.tileSprite2D = tileSprite
-            enemy.tileSprite2D.zPosition = 1
         }
         
         tileSprite.position = position
